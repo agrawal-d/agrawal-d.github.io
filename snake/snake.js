@@ -217,7 +217,7 @@ function lost() {
   ctx.fillText("Game Over!", canvas.width / 2, 100);
   ctx.font = "20px Arial";
   ctx.fillStyle = foodColor;
-  score = levelUp * (snake.level) + score;
+  score = levelUp * (snake.level - 1) + score;
   ctx.fillText(`Score : ${score}`, canvas.width / 2, 150);
   ctx.fillText(`Press Start Game to replay.`, canvas.width / 2, 180);
   ctx.fillStyle = 'white';

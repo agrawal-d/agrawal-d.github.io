@@ -191,9 +191,9 @@ function checkFoodEat() {
   if (snake.head.x == powerUp.x && snake.head.y == powerUp.y) {
     snake.push();
     setTimeout(snake.push(), 200);
-    setTimeout(snake.push(), 200);
     setTimeout(snake.push(), 400);
-    setTimeout(snake.push(), 400);
+    setTimeout(snake.push(), 600);
+    setTimeout(snake.push(), 800);
     powerUp.exists = null;
     powerUpSound.play();
 
@@ -344,6 +344,7 @@ function drawGame() {
 // startGame()
 
 function startGame() {
+  document.getElementById('start').innerHTML = "Reload Window";
   if (snake) {
     window.location.reload();
   }

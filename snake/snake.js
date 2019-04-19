@@ -347,6 +347,7 @@ function startGame() {
   if (snake) {
     window.location.reload();
   }
+  alert(`Welcome to Snake! Instructions:\n*Dont eat yourself.\n*You can teleport from walls.\n*Collect Food and Powerups.\n*Increase score to level up.\n*Compete in the leaderboard ( coming in less than 48 hours )`);
   snake = new Snake();
   score = 0;
   occupied = [];

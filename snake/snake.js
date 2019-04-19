@@ -238,6 +238,9 @@ function createLevel(level) {
   occupied = [];
   clearInterval(interval);
   if (level == 2) {
+    mySound.pause();
+    mySound = new Audio("soundtrack.mp3");
+    mySound.play();
     interval = setInterval(drawGame, 100);
     snakeColor = "rgb(145, 231, 136)";
     walls = [];
@@ -256,6 +259,10 @@ function createLevel(level) {
     console.log("LV2");
   } else if (level == 3) {
     console.log("LV3");
+    gridColor = "pink";
+    mySound.pause();
+    mySound = new Audio("level3.mp3");
+    mySound.play();
     interval = setInterval(drawGame, 70);
     snakeColor = "rgb(245, 231, 136)";
     walls = [];

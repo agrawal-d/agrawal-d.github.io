@@ -214,17 +214,21 @@ function startGame() {
 
 
 var hammertime = new Hammer(document.getElementById('body'));
+hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 hammertime.on('swipeleft', function (ev) {
     move('ArrowLeft');
-    // alert("FUCK")
+    // alert("Left")
 });
 hammertime.on('swiperight', function (ev) {
     move('ArrowRight');
+    // alert('Right');
 });
 hammertime.on('swipeup', function (ev) {
     move('ArrowUp');
+    // alert("Up");
 });
 hammertime.on('swipedown', function (ev) {
     // alert("LOL")
+    // alert("Down");
     move('ArrowDown');
 });

@@ -190,10 +190,10 @@ function checkFoodEat() {
   }
   if (snake.head.x == powerUp.x && snake.head.y == powerUp.y) {
     snake.push();
-    setTimeout(snake.push(), 200);
-    setTimeout(snake.push(), 400);
-    setTimeout(snake.push(), 600);
-    setTimeout(snake.push(), 800);
+    setTimeout(snake.push, 250);
+    setTimeout(snake.push, 450);
+    setTimeout(snake.push, 650);
+    setTimeout(snake.push, 850);
     powerUp.exists = null;
     powerUpSound.play();
 

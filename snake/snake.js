@@ -193,9 +193,13 @@ function drawGame() {
 
 }
 
+// startGame()
+
 function startGame() {
-  if (snake) return;
-  var soundtrack;
+  if (mySound) {
+    mySound.pause();
+  }
+  clearInterval(interval);
   snake = new Snake();
   score = 0;
   occupied = [];
@@ -208,10 +212,24 @@ function startGame() {
   mySound.play();
   interval = setInterval(drawGame, 150);
   createFood();
+  document.getElementById('pause').innerHTML = 'Pause Game';
 }
 
-// startGame()
+// pauseGame()
 
+function pauseGame() {
+  if (interval) {
+    clearInterval(interval);
+    interval = null;
+    mySound.pause();
+    document.getElementById('pause').innerHTML = 'Unpause Game';
+  }
+  else {
+    interval = setInterval(drawGame, 150);
+    mySound.play();
+    document.getElementById('pause').innerHTML = 'Pause Game';
+  }
+}
 
 var hammertime = new Hammer(document.getElementById('body'));
 hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });

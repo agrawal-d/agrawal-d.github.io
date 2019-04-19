@@ -10,7 +10,12 @@
         body {
             background: rgb(50, 50, 50);
             margin: 0px;
-            margin-top: 16px;
+            min-height: 99vh;
+            padding-top: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         #myCanvas {
@@ -20,6 +25,7 @@
             margin: 0 auto;
             margin-top: 50px;
             padding: 5px;
+            max-width: 100%;
         }
 
         .controls {
@@ -53,7 +59,7 @@
     <center>
         <button onclick="startGame()" id="start">Start Game</button>
         <button onclick="pauseGame()" id="pause">Pause Game</button>
-        <canvas id="myCanvas" width=800 height=800>
+        <canvas id="myCanvas">
             Error
         </canvas>
 

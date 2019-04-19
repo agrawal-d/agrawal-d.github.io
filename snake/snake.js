@@ -6,9 +6,12 @@ var scale = 40;
 var w = window.innerWidth;
 var h = window.innerHeight;
 if (w < 900) {
-  canvas.width = w - 50;
-  canvas.height = w - 50;
-  scale = (w - 50) / 20;
+  canvas.width = w;
+  canvas.height = w;
+  scale = w / 20;
+} else {
+  canvas.width = 800;
+  canvas.height = 800;
 }
 var snakeColor = 'rgb(115, 201, 255)';
 var foodColor = 'orange';
@@ -163,9 +166,7 @@ function drawGrid() {
   ctx.fillStyle = snakeColor;
   checkFoodEat();
   score = occupied.length * 100 - 200;
-  ctx.fillStyle = scoreColor;
-  ctx.font = "20px Arial";
-  ctx.fillText(score, 20, 20);
+
   ctx.fillStyle = snakeColor;
   for (var i = 1; i < occupied.length; ++i) {
     if (snake.head.x == occupied[i].x && snake.head.y == occupied[i].y) {
@@ -180,7 +181,9 @@ function drawGrid() {
   }
   ctx.fillStyle = food.color;
   ctx.fillRect(food.x * scale, food.y * scale, scale, scale);
-
+  ctx.fillStyle = scoreColor;
+  ctx.font = "20px Arial";
+  ctx.fillText(score, 20, 20);
 
 }
 

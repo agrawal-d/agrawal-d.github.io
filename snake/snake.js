@@ -25,10 +25,11 @@ var scoreColor = 'yellow'
 var mouthColor = 'red';
 var dx = 1;
 var mySound;
-var score;
+var score = 0;
 var coinSound;
 var deathSound;
 var powerUpSound;
+var levelupSound;
 var dy = 0;
 var powerUpTimeOut = null;
 var food = {
@@ -132,12 +133,19 @@ class Snake {
     tempdy = dy;
     this.head.move();
   }
-  push() {
+  push(nos) {
     var block = this.head;
     while (block.next != null) {
       block = block.next;
     }
+    if (!nos) {
+      nos = 1;
+    }
+    score += 100 * nos;
     block.next = new Block(block.x - block.dx, block.y - block.dy, block.dx, block.dy);
+
+
+
 
 
   }
@@ -189,11 +197,8 @@ function checkFoodEat() {
     coinSound.play()
   }
   if (snake.head.x == powerUp.x && snake.head.y == powerUp.y) {
-    snake.push();
-    snake.push();
-    snake.push();
-    snake.push();
-    snake.push();
+    snake.push(5);
+
     powerUp.exists = null;
     powerUpSound.play();
 
@@ -217,7 +222,7 @@ function lost() {
   ctx.fillText("Game Over!", canvas.width / 2, 100);
   ctx.font = "20px Arial";
   ctx.fillStyle = foodColor;
-  score = levelUp * (snake.level - 1) + score;
+
   ctx.fillText(`Score : ${score} , Level :${snake.level}`, canvas.width / 2, 150);
   ctx.fillText(`Press Start Game to replay.`, canvas.width / 2, 180);
   ctx.fillStyle = 'white';
@@ -225,15 +230,15 @@ function lost() {
 }
 
 function createLevel(level) {
-
+  levelupSound.play();
   snake = null;
-  score = 0;
+  score = score;
   snake = new Snake();
   snake.level = level;
   occupied = [];
   clearInterval(interval);
   if (level == 2) {
-    window.interval = setInterval(drawGame, 100);
+    interval = setInterval(drawGame, 100);
     snakeColor = "rgb(145, 231, 136)";
     walls = [];
     walls.push({ x: 0, y: 9 });
@@ -247,6 +252,30 @@ function createLevel(level) {
     walls.push({ x: 17, y: 5 });
     walls.push({ x: 16, y: 5 });
     walls.push({ x: 15, y: 5 });
+    walls.push({ x: 9, y: 10 });
+    console.log("LV2");
+  } else if (level == 3) {
+    console.log("LV3");
+    interval = setInterval(drawGame, 70);
+    snakeColor = "rgb(245, 231, 136)";
+    walls = [];
+    walls.push({ x: 0, y: 0 });
+    walls.push({ x: 19, y: 0 });
+    walls.push({ x: 0, y: 19 });
+    walls.push({ x: 19, y: 19 });
+    walls.push({ x: 9, y: 9 });
+    walls.push({ x: 9, y: 10 });
+    walls.push({ x: 10, y: 9 });
+    walls.push({ x: 10, y: 10 });
+    walls.push({ x: 10, y: 0 });
+    walls.push({ x: 9, y: 0 });
+    walls.push({ x: 9, y: 10 });
+    walls.push({ x: 10, y: 19 });
+    walls.push({ x: 9, y: 19 });
+    snake.head.x = 2;
+    snake.head.y = 2;
+
+
   }
 }
 
@@ -267,7 +296,7 @@ function drawGrid() {
   var block = snake.head;
   ctx.fillStyle = snakeColor;
   checkFoodEat();
-  score = occupied.length * 100 - 200;
+
 
   // Increase Levels
 
@@ -277,11 +306,14 @@ function drawGrid() {
       ctx.fillRect(walls[i].x * scale, walls[i].y * scale, scale, scale);
     }
   }
-
-  if (score > levelUp && snake.level != 2) {
+  if (score > 2 * levelUp && snake.level < 3) {
+    createLevel(3);
+    checkLevel(3);
+  } else if (score > levelUp && snake.level < 2) {
     createLevel(2);
     checkLevel(2);
   }
+
 
   ctx.fillStyle = snakeColor;
 
@@ -313,8 +345,7 @@ function drawGrid() {
   ctx.fillRect(food.x * scale, food.y * scale, scale, scale);
 
   if (snake.level > 1) {
-    console.log(snake.level);
-    score += levelUp * (snake.level - 1) + 200;
+    // console.log(snake.level);
   } else {
   }
   ctx.fillStyle = scoreColor;
@@ -358,10 +389,15 @@ function startGame() {
   occupied = [];
   snake.push();
   mySound = new Audio('sound.mp3');
+  levelupSound = new Audio('levelup.wav');
   mySound.pause();
   powerUpSound = new Audio('powerup.wav');
+  powerUpSound.preload = true;
   coinSound = new Audio('food.wav');
   deathSound = new Audio('death.wav');
+  coinSound.preload = true;
+  levelupSound.preload = true;
+  deathSound.preload = true;
   mySound.loop = true;
   mySound.play();
   interval = setInterval(drawGame, 150);

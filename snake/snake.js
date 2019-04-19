@@ -211,3 +211,20 @@ function startGame() {
 }
 
 // startGame()
+
+
+var hammertime = new Hammer(document.getElementById('body'));
+hammertime.on('swipeleft', function (ev) {
+    move('ArrowLeft');
+    // alert("FUCK")
+});
+hammertime.on('swiperight', function (ev) {
+    move('ArrowRight');
+});
+hammertime.on('swipeup', function (ev) {
+    move('ArrowUp');
+});
+hammertime.on('swipedown', function (ev) {
+    // alert("LOL")
+    move('ArrowDown');
+});

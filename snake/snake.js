@@ -347,6 +347,10 @@ function startGame() {
   document.getElementById('start').innerHTML = "Reload Window";
   if (snake) {
     window.location.reload();
+    alert("Reloading...");
+    ctx.fillStyle = "black";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    return;
   }
   alert(`Welcome to Snake! Instructions:\n*Dont eat yourself.\n*You can teleport from walls.\n*Collect Food and Powerups.\n*Increase score to level up.\n*Compete in the leaderboard ( coming in less than 48 hours )`);
   snake = new Snake();

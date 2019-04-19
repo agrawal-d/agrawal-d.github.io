@@ -9,6 +9,8 @@
     <style>
         body {
             background: rgb(50, 50, 50);
+            margin: 0px;
+            margin-top: 16px;
         }
 
         #myCanvas {
@@ -19,6 +21,22 @@
             margin-top: 50px;
             padding: 5px;
         }
+
+        .controls {
+            display: none;
+        }
+
+        @media (max-width:900px) {
+            .controls {
+                display: block;
+            }
+        }
+
+        .controls button {
+            text-align: center;
+            margin: 5px;
+            padding: 20px;
+        }
     </style>
 
 </head>
@@ -26,11 +44,20 @@
 <body>
     <center>
         <button onclick="startGame()" id="start">Start Game</button>
-    </center>
-    <canvas id="myCanvas" width=800 height=800>
-        Error
-    </canvas>
-    <script src="snake.js"></script>
+        <canvas id="myCanvas" width=800 height=800>
+            Error
+        </canvas>
+        <br>
+        <div class="controls">
+            <button onclick="move('ArrowUp')">🡅</button>
+            <br>
+            <button onclick="move('ArrowLeft')">🡄</button><button onclick="move('ArrowRight')">🡆</button>
+            <br>
+            <button onclick="move('ArrowDown')">🡇</button>
+        </div>
+
+
+        <script src="snake.js"></script>
 </body>
 
 </html>

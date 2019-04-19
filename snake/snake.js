@@ -190,10 +190,10 @@ function checkFoodEat() {
   }
   if (snake.head.x == powerUp.x && snake.head.y == powerUp.y) {
     snake.push();
-    setTimeout(snake.push, 250);
-    setTimeout(snake.push, 450);
-    setTimeout(snake.push, 650);
-    setTimeout(snake.push, 850);
+    snake.push();
+    snake.push();
+    snake.push();
+    snake.push();
     powerUp.exists = null;
     powerUpSound.play();
 
@@ -218,7 +218,7 @@ function lost() {
   ctx.font = "20px Arial";
   ctx.fillStyle = foodColor;
   score = levelUp * (snake.level - 1) + score;
-  ctx.fillText(`Score : ${score}`, canvas.width / 2, 150);
+  ctx.fillText(`Score : ${score} , Level :${snake.level}`, canvas.width / 2, 150);
   ctx.fillText(`Press Start Game to replay.`, canvas.width / 2, 180);
   ctx.fillStyle = 'white';
   ctx.fillText(`Programmed by Divyanshu Agrawal.`, canvas.width / 2, 210);

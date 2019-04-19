@@ -26,20 +26,24 @@
             display: none;
         }
 
-        @media (max-width:900px) {
-            .controls {
-                display: block;
-            }
-        }
-
-        #myCanvas {
-            margin-top: 5px;
-        }
-
         .controls button {
             text-align: center;
             margin: 5px;
             padding: 20px;
+        }
+
+        @media (max-width:900px) {
+            .controls {
+                display: block;
+            }
+
+            #myCanvas {
+                margin-top: 5px;
+            }
+
+            .controls button {
+                padding: 5px 40px 5px 40px;
+            }
         }
     </style>
 

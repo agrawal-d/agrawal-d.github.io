@@ -10,8 +10,7 @@
         body {
             background: rgb(20, 20, 20);
             margin: 0px;
-            height: calc(100vh-100px);
-            overflow-y: hidden;
+            overflow-y: scroll;
             padding-top: 16px;
             text-align: center;
             margin-bottom: 40px !important;
@@ -69,7 +68,7 @@
         }
 
         button {
-            color: grey;
+            color: white;
             background: rgb(0, 0, 0);
             padding: 10px 20px 10px 20px;
             border: 0px;
@@ -122,7 +121,7 @@
             text-align: center;
             background: rgb(70, 70, 70);
             color: rgb(200, 200, 200);
-            padding-top: 50px;
+            padding:50px;
         }
 
         .view-all {
@@ -186,11 +185,12 @@
         <a href="#center"></a><button onclick="startGame()" class="button" id="start">Start Game</button></a>
         <button onclick="pauseGame()" class="button" id="pause">Pause</button>
         <a href="#leaderboard"><button>Leaderboard</button></a>
-        <canvas id="myCanvas">
+        <canvas id="myCanvas" tabindex=1>
             Error
         </canvas>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+
         <div class="leaderboard" id="leaderboard">
             <h2>Leaderboard</h2><br>
             <a href="#body" ><button style="background:grey;color:black;">Back to Game</button></a>

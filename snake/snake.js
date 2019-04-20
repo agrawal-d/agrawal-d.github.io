@@ -40,7 +40,12 @@ if (w < 900) {
   canvas.width = 800;
   canvas.height = 800;
 }
+if (h < 900) {
+  canvas.width = h - 150;
+  canvas.height = h - 150;
+  scale = (h - 150) / 20;
 
+}
 console.log(localStorage);
 
 // Get Leaderboard
@@ -331,7 +336,7 @@ function lost() {
   ctx.fillText(`Score : ${score} , Level :${snake.level}`, canvas.width / 2, 150);
   ctx.fillText(`Press Start Game to replay.`, canvas.width / 2, 180);
   ctx.fillStyle = 'white';
-  ctx.fillText(`Programmed by @hereisdx & @predator810.`, canvas.width / 2, 210);
+  ctx.fillText(`By @hereisdx & @predator810.`, canvas.width / 2, 210);
 
   // Adding user's score to his High scores
   for (var i = 0; i < 5; i++) {
@@ -555,21 +560,21 @@ function pauseGame() {
 var hammertime = new Hammer(document.getElementById('myCanvas'));
 hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 hammertime.on('swipeleft', function (ev) {
+  ev.preventDefault();
   move('ArrowLeft');
-  // alert("Left")
 });
 hammertime.on('swiperight', function (ev) {
+  ev.preventDefault();
   move('ArrowRight');
-  // alert('Right');
 });
 hammertime.on('swipeup', function (ev) {
+  ev.preventDefault();
   move('ArrowUp');
-  // alert("Up");
+  console.log("Up")
 });
 hammertime.on('swipedown', function (ev) {
-  // alert("LOL");
+  ev.preventDefault();
   console.log("Down");
-  // alert("Down");
   move('ArrowDown');
 });
 
@@ -616,4 +621,8 @@ $(".view-all").on("click", function () {
 })
 $(".close-all").on("click", function () {
   $(".full").fadeOut();
+})
+
+$("#myCanvas").on("mouseOver", function () {
+  $(this).focus();
 })

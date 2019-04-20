@@ -18,7 +18,7 @@ if (w < 900) {
   canvas.width = 800;
   canvas.height = 800;
 }
-var snakeColor = #73C9FF;
+var snakeColor = 'rgb(115, 201, 255)';
 var foodColor = 'orange';
 var gridColor = 'rgb(0,0,0)'
 var scoreColor = 'yellow'

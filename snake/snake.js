@@ -384,10 +384,10 @@ function createLevel(level) {
     walls.push({ x: 16, y: 5 });
     walls.push({ x: 15, y: 5 });
     walls.push({ x: 9, y: 10 });
+    createFood();
     console.log("LV2");
   } else if (level == 3) {
     console.log("LV3");
-    gridColor = "pink";
     mySound.pause();
     mySound = new Audio("level3.mp3");
     mySound.play();
@@ -409,8 +409,58 @@ function createLevel(level) {
     walls.push({ x: 9, y: 19 });
     snake.head.x = 2;
     snake.head.y = 2;
-
-
+    createFood();
+  } else if (level == 4) {
+    mySound.pause();
+    mySound = new Audio("sound.mp3");
+    mySound.play();
+    interval = setInterval(drawGame, 70);
+    snakeColor = "rgb(90, 131, 236)";
+    walls = [];
+    walls.push({ x: 0, y: 8 });
+    walls.push({ x: 1, y: 8 });
+    walls.push({ x: 2, y: 8 });
+    walls.push({ x: 3, y: 8 });
+    walls.push({ x: 4, y: 8 });
+    walls.push({ x: 5, y: 8 });
+    walls.push({ x: 6, y: 8 });
+    walls.push({ x: 7, y: 8 });
+    walls.push({ x: 7, y: 7 });
+    walls.push({ x: 7, y: 6 });
+    walls.push({ x: 7, y: 5 });
+    walls.push({ x: 7, y: 4 });
+    walls.push({ x: 19, y: 10 });
+    walls.push({ x: 18, y: 10 });
+    walls.push({ x: 17, y: 10 });
+    walls.push({ x: 16, y: 10 });
+    walls.push({ x: 15, y: 10 });
+    walls.push({ x: 14, y: 10 });
+    walls.push({ x: 13, y: 10 });
+    walls.push({ x: 12, y: 10 });
+    walls.push({ x: 12, y: 11 });
+    walls.push({ x: 12, y: 12 });
+    walls.push({ x: 12, y: 13 });
+    walls.push({ x: 12, y: 14 });
+    walls.push({ x: 0, y: 19 });
+    walls.push({ x: 1, y: 19 });
+    walls.push({ x: 2, y: 19 });
+    walls.push({ x: 3, y: 19 });
+    walls.push({ x: 4, y: 19 });
+    walls.push({ x: 5, y: 19 });
+    walls.push({ x: 6, y: 19 });
+    walls.push({ x: 7, y: 19 });
+    walls.push({ x: 19, y: 0 });
+    walls.push({ x: 18, y: 0 });
+    walls.push({ x: 17, y: 0 });
+    walls.push({ x: 16, y: 0 });
+    walls.push({ x: 15, y: 0 });
+    walls.push({ x: 14, y: 0 });
+    walls.push({ x: 13, y: 0 });
+    walls.push({ x: 12, y: 0 });
+    snake.head.x = 2;
+    snake.head.y = 2;
+    createFood();
+    console.log("LV4");
   }
 }
 
@@ -441,7 +491,10 @@ function drawGrid() {
       ctx.fillRect(walls[i].x * scale, walls[i].y * scale, scale, scale);
     }
   }
-  if (score > 2 * levelUp && snake.level < 3) {
+  if (score > 3 * levelUp && snake.level < 4) {
+    createLevel(4);
+    checkLevel(4);
+  } else if (score > 2 * levelUp && snake.level < 3) {
     createLevel(3);
     checkLevel(3);
   } else if (score > levelUp && snake.level < 2) {
@@ -518,7 +571,7 @@ function startGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     return;
   }
-  alert(`Welcome to Snake! Instructions:\n*Dont eat yourself.\n*You can teleport from walls.\n*Collect Food and Powerups.\n*Increase score to level up.\n*Compete in the leaderboard ( coming in less than 48 hours )`);
+  alert(`Welcome to Snake! Instructions:\n*Dont eat yourself.\n*You can teleport from walls.\n*Collect Food and Powerups.\n*Increase score to level up.`);
   snake = new Snake();
   score = 0;
   occupied = [];

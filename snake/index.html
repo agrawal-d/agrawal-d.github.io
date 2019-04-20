@@ -54,8 +54,7 @@
         }
 
         .leaderboard {
-            border-radius: 15px 15`px 15px 15px;
-
+            border-radius: 15px 15px 15px 15px;
             padding: 20px;
             border-top: 1px solid rgb(30, 30, 30);
             width: 810px;
@@ -106,6 +105,30 @@
             padding: 5px;
         }
 
+        .full {
+            position: fixed;
+            top: 20px;
+            display: none;
+            left: 0px;
+            min-height:200px;
+            max-height:80%;
+            overflow-y:scroll;
+            width: 50%;
+            left: 25%;
+            border-radius: 0px;
+            box-shadow: 0px 0px 10px 0px rgba(60, 60, 60, 0.82);
+            padding: 10px;
+            text-align: center;
+            background: rgb(70, 70, 70);
+            color: rgb(200, 200, 200);
+            padding-top: 50px;
+        }
+
+        .view-all {
+            background: grey;
+            color: black;
+        }
+
         @media (max-width:900px) {
             .controls {
                 display: block;
@@ -130,6 +153,17 @@
             .all {
                 width: 100% !important;
                 font-size: 80%;
+
+            }
+
+            .full {
+                border-radius: 0px;
+                left: 0px;
+                width:100%;
+                top: 0px;
+                overflow-y:scroll;
+                height: 100%;
+                max-height:100%;
             }
 
             h2 {
@@ -139,6 +173,8 @@
             .name {
                 padding-bottom: 5px;
             }
+
+
         }
     </style>
 
@@ -147,11 +183,12 @@
 <body id="body">
     <center id="center">
         <a href="#center"></a><button onclick="startGame()" class="button" id="start">Start Game</button></a>
-        <button onclick="pauseGame()" class="button" id="pause">Pause Game</button>
+        <button onclick="pauseGame()" class="button" id="pause">Pause</button>
         <a href="#leaderboard"><button>Leaderboard</button></a>
         <canvas id="myCanvas">
             Error
         </canvas>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="leaderboard" id="leaderboard">
             <h2>Leaderboard</h2><br>
@@ -161,13 +198,24 @@
                     <h3>Your Bests</h3>
                     <table></table>
                 </div>
-                <div class="all">
+                <div class="all" style="min-height:100px;">
                     <h3>Top 5 Players</h3>
                     <table></table>
                 </div>
+
             </div>
+            <br>
+            <button class="view-all">View All the Players</button>
         </div>
+
     </center>
+    <div class="full">
+        <button class="close-all">Close</button>
+        <br><br><br>
+        <div class="list">
+            Loading...
+        </div>
+    </div>
     <script src="https://hammerjs.github.io/dist/hammer.min.js" async></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="snake.js"></script>

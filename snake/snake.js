@@ -533,7 +533,7 @@ function startGame() {
   mySound.play();
   interval = setInterval(drawGame, 150);
   createFood();
-  document.getElementById('pause').innerHTML = 'Pause Game';
+  document.getElementById('pause').innerHTML = 'Pause';
 }
 
 // pauseGame()
@@ -543,12 +543,12 @@ function pauseGame() {
     clearInterval(interval);
     interval = null;
     mySound.pause();
-    document.getElementById('pause').innerHTML = 'Unpause Game';
+    document.getElementById('pause').innerHTML = 'Resume';
   }
   else {
     interval = setInterval(drawGame, 150);
     mySound.play();
-    document.getElementById('pause').innerHTML = 'Pause Game';
+    document.getElementById('pause').innerHTML = 'Pause';
   }
 }
 
@@ -585,3 +585,35 @@ $(document).keydown(function (e) {
   }
   return true;
 });
+
+$(".view-all").on("click", function () {
+  $(".full").fadeIn();
+  $(".list").text("Loading...");
+  $.ajax({
+    url: serverURL + 'all',
+    success: function (result) {
+      // alert(JSON.stringify(result));
+      $(".list").empty();
+      $(".list").append("<table></table>");
+      $(".list > table").append(`
+        <tr>
+          <th>Name</th>
+          <th>Level</th>
+          <th>Score</th>
+        </tr>
+      `);
+      for (var i = 0; i < result.length; ++i) {
+        $(".list > table").append
+          (`<tr>
+            <td><b>${result[i].name}</b></td>
+            <td>${result[i].level}</td>
+            <td>${result[i].highScore}</td>
+          </tr>
+        `);
+      }
+    }
+  })
+})
+$(".close-all").on("click",function(){
+  $(".full").fadeOut();
+})

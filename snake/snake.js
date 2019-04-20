@@ -552,7 +552,7 @@ function pauseGame() {
   }
 }
 
-var hammertime = new Hammer(document.getElementById('body'));
+var hammertime = new Hammer(document.getElementById('myCanvas'));
 hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 hammertime.on('swipeleft', function (ev) {
   move('ArrowLeft');

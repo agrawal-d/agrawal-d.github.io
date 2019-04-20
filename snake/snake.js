@@ -1,7 +1,7 @@
 function getname() {
   name = prompt("Enter your name");
-  if (name.length > 16) {
-    alert('Name should be less than or equal to 16 characters');
+  if (name.length > 16 || name.length < 3) {
+    alert('Name should be 3-16 characters long');
     name = getname();
   }
   return name;

@@ -344,7 +344,6 @@ function lost() {
       userscores.splice(i, 0, { lvl: snake.level, score: score });
       userscores.pop();
       localStorage.highScores = JSON.stringify(userscores);
-      console.log(localStorage.highScores);
       break;
     }
   }

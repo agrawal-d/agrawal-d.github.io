@@ -18,7 +18,7 @@ if (w < 900) {
   canvas.width = 800;
   canvas.height = 800;
 }
-var snakeColor = 'rgb(115, 201, 255)';
+var snakeColor = #73C9FF;
 var foodColor = 'orange';
 var gridColor = 'rgb(0,0,0)'
 var scoreColor = 'yellow'
@@ -143,11 +143,6 @@ class Snake {
     }
     score += 100 * nos;
     block.next = new Block(block.x - block.dx, block.y - block.dy, block.dx, block.dy);
-
-
-
-
-
   }
 }
 var snake;
@@ -390,6 +385,7 @@ function startGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     return;
   }
+  snakeColor=document.getElementById("snakeColor").value;
   alert(`Welcome to Snake! Instructions:\n*Dont eat yourself.\n*You can teleport from walls.\n*Collect Food and Powerups.\n*Increase score to level up.\n*Compete in the leaderboard ( coming in less than 48 hours )`);
   snake = new Snake();
   score = 0;
@@ -410,6 +406,7 @@ function startGame() {
   interval = setInterval(drawGame, 150);
   createFood();
   document.getElementById('pause').innerHTML = 'Pause Game';
+
 }
 
 // pauseGame()

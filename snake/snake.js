@@ -1,5 +1,27 @@
+function getname() {
+  name = prompt("Enter your name");
+  if (name.length > 16) {
+    alert('Name should be less than or equal to 16 characters');
+    name = getname();
+  }
+  return name;
+}
+if (localStorage.name) {
+  $('body').prepend(`<h2 class='name'> Hello ${localStorage.name} </h2>`)
+}
+else {
+  localStorage.name = getname();
+  var Scores = [{ lvl: 0, score: 0 }, { lvl: 0, score: 0 }, { lvl: 0, score: 0 }, { lvl: 0, score: 0 }, { lvl: 0, score: 0 }];
+  localStorage.highScores = JSON.stringify(Scores);
+  $('body').prepend(`<h2 class="name"> Hello ${localStorage.name} </h2>`)
+}
+
+var userscores = JSON.parse(localStorage.highScores);
+
+
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
+var serverURL = 'https://agile-mountain-19033.herokuapp.com/';
 var grid = 200;
 var interval;
 var levelUp = 5000;
@@ -18,6 +40,59 @@ if (w < 900) {
   canvas.width = 800;
   canvas.height = 800;
 }
+
+console.log(localStorage);
+
+// Get Leaderboard
+function updateDisplay(result) {
+  console.log("Leaderboard", result);
+  // var lb = $("#all");
+  $(".all > table").empty();
+  $(".all > table").append(`
+    <tr>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Score</th>
+    </tr>
+  `);
+  for (var i = 0; i < result.length; ++i) {
+    $(".all > table").append
+      (`<tr>
+        <td><b>${result[i].name}</b></td>
+        <td>${result[i].level}</td>
+        <td>${result[i].highScore}</td>
+      </tr>
+    `);
+  }
+}
+function getleaderboard() {
+  $.ajax({
+    type: "GET",
+    url: serverURL + 'leaderboard',
+    success: function (result) {
+      updateDisplay(result);
+    },
+    error: function (xhr) {
+      console.log("GETLEADERERROR", xhr);
+    }
+  });
+  $(".your > table").empty();
+  $(".your > table").append(`<tr>
+  <th>Level</th>
+  <th>Score</th>
+  </tr>`);
+  for (var i = 0; i < 5; ++i) {
+    $(".your > table").append(`
+    <tr>
+    <td>${userscores[i].lvl}</td>
+    <td>${userscores[i].score}</td>
+    </tr>
+    `);
+  }
+}
+
+getleaderboard();
+
 var snakeColor = 'rgb(115, 201, 255)';
 var foodColor = 'orange';
 var gridColor = 'rgb(0,0,0)'
@@ -154,6 +229,7 @@ var snake;
 
 document.addEventListener("keydown", keyDownHandler, false);
 function keyDownHandler(e) {
+  e.preventDefault();
   dx = snake.head.dx;
   dy = snake.head.dy;
   if (e.key == 'ArrowLeft') {
@@ -204,6 +280,36 @@ function checkFoodEat() {
 
   }
 }
+
+// function to post score
+
+function postscore() {
+
+  $.ajax({
+    type: "POST",
+    url: serverURL + 'postScore',
+    data: {
+      name: localStorage.name,
+      highScore: score,
+      level: snake.level
+    },
+    success: function (result) {
+      if (result.error) {
+        alert('Name Should be less');
+        postscore();
+      } else {
+        updateDisplay(result);
+
+      }
+    },
+    error: function (xhr) {
+      console.log("Error");
+    }
+  })
+}
+
+
+
 function lost() {
 
   mySound.pause();
@@ -227,6 +333,19 @@ function lost() {
   ctx.fillText(`Press Start Game to replay.`, canvas.width / 2, 180);
   ctx.fillStyle = 'white';
   ctx.fillText(`Programmed by Divyanshu Agrawal.`, canvas.width / 2, 210);
+
+  // Adding user's score to his High scores
+  for (var i = 0; i < 5; i++) {
+    if (score > userscores[i].score) {
+      userscores.splice(i, 0, { lvl: snake.level, score: score });
+      userscores.pop();
+      localStorage.highScores = JSON.stringify(userscores);
+      console.log(localStorage.highScores);
+      break;
+    }
+  }
+  postscore();
+  getleaderboard();
 }
 
 function createLevel(level) {
@@ -235,6 +354,12 @@ function createLevel(level) {
   score = score;
   snake = new Snake();
   snake.level = level;
+  dx = 1;
+  dy = 0;
+  tempdx = 1;
+  tempdy = 0;
+  snake.head.dx = 1;
+  snake.head.dy = 0;
   occupied = [];
   clearInterval(interval);
   if (level == 2) {

@@ -10,7 +10,7 @@
         body {
             background: rgb(20, 20, 20);
             margin: 0px;
-            height: 100vh;
+            height: calc(100vh-100px);
             overflow-y: hidden;
             padding-top: 16px;
             text-align: center;
@@ -145,8 +145,8 @@
 </head>
 
 <body id="body">
-    <center>
-        <a href="#body"></a><button onclick="startGame()" class="button" id="start">Start Game</button></a>
+    <center id="center">
+        <a href="#center"></a><button onclick="startGame()" class="button" id="start">Start Game</button></a>
         <button onclick="pauseGame()" class="button" id="pause">Pause Game</button>
         <a href="#leaderboard"><button>Leaderboard</button></a>
         <canvas id="myCanvas">

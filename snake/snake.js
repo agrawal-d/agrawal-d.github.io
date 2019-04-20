@@ -229,7 +229,6 @@ var snake;
 
 document.addEventListener("keydown", keyDownHandler, false);
 function keyDownHandler(e) {
-  e.preventDefault();
   dx = snake.head.dx;
   dy = snake.head.dy;
   if (e.key == 'ArrowLeft') {
@@ -568,7 +567,21 @@ hammertime.on('swipeup', function (ev) {
   // alert("Up");
 });
 hammertime.on('swipedown', function (ev) {
-  // alert("LOL")
+  // alert("LOL");
+  console.log("Down");
   // alert("Down");
   move('ArrowDown');
+});
+
+var ar = new Array(33, 34, 35, 36, 37, 38, 39, 40);
+
+$(document).keydown(function (e) {
+  var key = e.which;
+  //console.log(key);
+  //if(key==35 || key == 36 || key == 37 || key == 39)
+  if ($.inArray(key, ar) > -1) {
+    e.preventDefault();
+    return false;
+  }
+  return true;
 });

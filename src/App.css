@@ -1,22 +1,29 @@
-.App {
+body, p, span {
+  color: black;
+}
+
+.main {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.profile-pic {
   text-align: center;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
+.repo-card {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.repo-col {
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #09d3ac;
+a {
+  color: rgb(69, 101, 206)
 }

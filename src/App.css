@@ -3,7 +3,7 @@ body, p, span {
 }
 
 .main {
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 20px;
@@ -26,4 +26,12 @@ body, p, span {
 
 a {
   color: rgb(69, 101, 206)
+}
+
+.btn{
+  margin-bottom:4px;
+}
+
+.card-title{
+  text-transform: uppercase;
 }

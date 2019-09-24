@@ -121,15 +121,15 @@ class Content extends React.Component {
               <Image src={this.state.avatar} alt="Profile" className="profile-pic" rounded />
             </Col>
             <Col>
-              <h1>Hi, I am {this.state.profile.name}.</h1>
-              <p>Welcome to my website. It is just a wrapper for Github API calls. You can find my repositories and other stuff here.</p>
+              <h1 className="text-center">Hi, I am {this.state.profile.name}.</h1>
+              <p>I am a programmer, currently an undergraduate student at BITS Pilani University, India. This website is just a wrapper for some Github API calls. You can find my repositories and other stuff here.</p>
               <hr />
               <a href={this.state.profile.url}>
-                <Button>Head to my Github Profile</Button>&nbsp;
+                <Button>Github</Button>&nbsp;
 
               </a>
               <a href="mailto:agrawal.divyanshu@outlook.com">
-                <Button variant="success">Email Me</Button>
+                <Button variant="success">Email</Button>
               </a>
             </Col>
           </Row>

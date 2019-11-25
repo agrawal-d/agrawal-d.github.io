@@ -16,13 +16,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, img {
   border: 0;
 }
 
-body {
-
-}
-
 /*- Base color -*/
 
-$background-color: #FFFFFF;
+$background-color: rgb(255, 255, 255);
 $text-color: #333333;
 $text-light-color: rgba(0,0,0,0.6);
 $text-dark-color: #000000;

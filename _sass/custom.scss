@@ -1,3 +1,19 @@
 /*- Custom style -*/
 
 // -- Put custom style under this point -- //
+
+
+
+p a{
+border-bottom:1px dotted rgb(65, 91, 238);
+
+}
+.highlight code{
+    padding:10px;
+    background:rgb(232, 234, 243);
+    display:block;
+}
+
+article img{
+    border:1px solid whitesmoke;
+}

@@ -17,7 +17,7 @@ If you, like me, love the idea of using Jekyll ( which is written in Ruby, if yo
 
 
 <ol>
-<li>Install ruby and ruby-dev
+<li>Install ruby and ruby-dev.
 
 If you are using a linux distribution, it should be very easy. Just use you package manager. For windows and mac, see the docs for detailed steps.
 

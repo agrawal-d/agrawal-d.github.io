@@ -2,18 +2,78 @@
 
 // -- Put custom style under this point -- //
 
-
-
-p a{
-border-bottom:1px dotted rgb(65, 91, 238);
-
+p a {
+  border-bottom: 1px dotted rgb(65, 91, 238);
 }
-.highlight code{
-    padding:10px;
-    background:rgb(232, 234, 243);
-    display:block;
+.highlight code {
+  padding: 10px;
+  background: rgb(244, 245, 246);
+  display: block;
+  border: 4px solid rgb(245, 239, 239);
 }
 
-article img{
-    border:1px solid whitesmoke;
+article img {
+  border: 4px solid whitesmoke;
+  border-radius: 0px;
+}
+
+#nav-menu {
+  position: absolute;
+}
+
+.thm-dark {
+  background: rgb(60, 61, 65);
+  color: white;
+}
+.thm-dark p,
+.thm-dark body,
+.thm-dark a,
+.thm-dark span {
+  color: rgb(230, 216, 216) !important;
+}
+
+.thm-dark article img {
+  border-color: rgb(92, 91, 91);
+}
+.thm-dark #nav-menu #menu,
+.thm-dark #nav-menu #menu:before,
+.thm-dark #nav-menu #menu::after {
+  background: white;
+}
+
+code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.thm-dark #nav {
+  background: rgb(46, 46, 47);
+}
+.highlight {
+  margin: 0px;
+}
+
+.thm-dark code {
+  color: white;
+  background: rgb(49, 50, 54);
+  border-color: grey;
+}
+
+footer {
+  background: transparent;
+}
+
+.comments {
+  margin-top: 50px;
+  background: rgba(98, 96, 102, 0.2);
+  padding: 20px;
+}
+
+.theme-button {
+  border: 0px;
+  background: rgb(98, 96, 102);
+  color: white;
+  border-radius: 4px;
+  outline: none;
+  padding: 5px 20px 5px 20px;
 }

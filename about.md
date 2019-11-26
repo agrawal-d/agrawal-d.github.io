@@ -9,6 +9,6 @@ Hi! My name is Divyanshu Agrawal. I am a programmer, and I enjoy making cool stu
 
 Apart from programming, I enjoy reading [books](https://www.goodreads.com/review/list/26803636). My favourite genre is Fantasy. Some my favourite books are **To Kill a Mockingbird** by Harper Lee, **Eragon** by Christopher Paolini and **The Call of the Wild** by Jack London. I also enjoy drawing occasionally.
 
-I like to read a lot about computer science culture and philosophy. As a consequence, my favourite websites are [Hacker News](https://news.ycombinator.com/news) and [JSTOR Daily](https://daily.jstor.org/). I love to read detailed articles about anything at all, so if you find something interesting on the internet, please do [share it with me](/contact).
+I like to read a lot about computer science, culture, technology, and philosophy. As a consequence, my favourite websites are [Hacker News](https://news.ycombinator.com/news) and [JSTOR Daily](https://daily.jstor.org/). I love to read detailed articles about anything at all, so if you find something interesting on the internet, please do [share it with me](/contact).
 
 You can get in touch with me [here](/contact).

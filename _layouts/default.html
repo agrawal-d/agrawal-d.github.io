@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="body">
 
 {% include head.html %}
 
@@ -8,9 +8,9 @@
 	  	
 	  	<!-- Navigation -->
 	  	{% include menu.html %}
-    
+
     <!-- Icon menu -->
-	  <a {% if site.reverse == true %}id="nav-menu-left"{% else %}id="nav-menu"{% endif %}>
+	  <a {% if site.reverse == true %}id="nav-menu-left"{% else %}id="nav-menu"{% endif %} onclick="toggle()">
 	  	<div id="menu"></div>
 	  </a>
 

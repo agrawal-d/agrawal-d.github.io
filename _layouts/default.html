@@ -7,7 +7,7 @@
         {% if page.title %}
         {{ page.title }} &mdash; {{site.name}}
         {% else %}
-        {{ site.name }} &mdash; {{ site.description }}
+        {{ site.name }}
         {% endif %}
     </title>
 
@@ -17,7 +17,11 @@
     <link rel='stylesheet' href='{{ site.url }}/assets/css/site.css'>
     {% endif %}
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-
+    <meta name="description" content="{% if page.title %}
+    {{page.content | strip_html| truncate:200}}
+    {% else %}
+    {{ site.description }}
+    {% endif %}">
 </head>
 
 <body>
@@ -26,7 +30,8 @@
 
         {{ content }}
         <hr>
-        <p>Hello from <a href="https://github.com/agrawal-d">agrawal-d</a></p>
+        <p>Thanks for visiting. Hello from <a
+                href="https://github.com/agrawal-d">agrawal-d</a></p>
     </div>
 
 </body>

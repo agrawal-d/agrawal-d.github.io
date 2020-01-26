@@ -11,3 +11,5 @@ I am also active a few web communities and you can check out my content there to
 - [Hacker News](https://news.ycombinator.com/user?id=hereisdx)
 
 - [Goodreads](https://www.goodreads.com/review/list/26803636)
+
+I am also a member of my college's programming club - CRUx, you can [check out my page there](https://crux-bphc.github.io/members/divyanshu-agrawal)

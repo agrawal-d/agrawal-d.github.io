@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "How I built this website"
+postdate: "December 16, 2019"
 ---
 
 A long time ago, I stumbled upon a beautiful and simple website - the personal blog / website of [Alexy Guzey](https://guzey.com/). And while the content was interesting, what left the biggest impression on me was how lightweight his website was. I tinkered a bit and realized that he was not using Wordpress or Blogger (he uses [hugo](https://gohugo.io/)), which are rather heavy (and ugly). I realized that I too wanted my own blog. Being the programmer that I am, I started creating my own blog-generating website called, well, [blog](https://github.com/agrawal-d/blog). But I quickly realized the problem - it needed dynamic hosting. And since Github Pages was the hosting I wanted to use, I had to search for another alternative.

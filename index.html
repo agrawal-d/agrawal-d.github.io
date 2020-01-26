@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="post-list">
+  {% for post in paginator.posts %}
+  <section>
+    <h2>
+      <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
+        {{ post.title }}
+      </a>
+    </h2>
+
+    <p>{{ post.content | strip_html | truncate: 200 }}</p>
+  </section>
+  {% endfor %}
+
+</div>
+
+{% if paginator.previous_page %}
+<a href='{{ site.url }}{{ paginator.previous_page_path }}'>Previous</a>
+{% endif %}
+
+&mdash; {{ paginator.page }} of {{ paginator.total_pages }} &mdash;
+
+{% if paginator.next_page %}
+<a href='{{ site.url }}{{ paginator.next_page_path }}'>Next</a>
+{% endif %}

@@ -1,0 +1,18 @@
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+hr {
+  border: 0px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.title {
+  color: black;
+}
+
+.highlight {
+  padding: 0px 15px 0px 15px;
+  background-color: whitesmoke;
+}

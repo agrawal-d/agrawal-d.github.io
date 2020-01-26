@@ -1,8 +1,8 @@
 name: "Web log of agrawal-d"
 description: "I post random stuff here, mostly related to programming."
 
-url: ""
-baseurl: ""
+url: "https://agrawal-d.github.io" # use this one
+baseurl: "https://agrawal-d.github.io"
 
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"

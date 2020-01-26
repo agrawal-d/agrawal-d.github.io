@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Github pages static blogs using Jekyll"
+title: "How I built this website"
 ---
 
 A long time ago, I stumbled upon a beautiful and simple website - the personal blog / website of [Alexy Guzey](https://guzey.com/). And while the content was interesting, what left the biggest impression on me was how lightweight his website was. I tinkered a bit and realized that he was not using Wordpress or Blogger (he uses [hugo](https://gohugo.io/)), which are rather heavy (and ugly). I realized that I too wanted my own blog. Being the programmer that I am, I started creating my own blog-generating website called, well, [blog](https://github.com/agrawal-d/blog). But I quickly realized the problem - it needed dynamic hosting. And since Github Pages was the hosting I wanted to use, I had to search for another alternative.
 
 ### Enter Jekyll
 
-![Jekyll logo](/img/logo-jekyll.png)
+![Jekyll logo]({{site.url}}/img/logo-jekyll.png)
 
 Then a few days ago, I stumbled upon [Jekyll](https://jekyllrb.com/). And I immediately fell in love. Jkeyll was exactly what I was looking for. I no longer needed to reinvent the wheel. The project was very active, the documentation was beautiful and minmal themes were a-plenty! But the most important thing to me was that it was completely customizable! I like to tinker a lot with whatever I make, and Wordpress and Blogger are a bit difficult to handle for me. It took me less that 30 minutes to set up my own blog.
 
@@ -49,7 +49,7 @@ bundle exec jekyll serve
 
 That's it. Your static blog-site should be ready to publish. Open it in your browser. It should look something like this
 
-![Jekyll screenshot](/img/jekyll-demo.png)
+![Jekyll screenshot]({{site.url}}/img/jekyll-demo.png)
 
 ### Limitations
 

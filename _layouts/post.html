@@ -1,12 +1,13 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}{{ page.shortUrl }}</h1>
-<div>{{page.postdate}}</div>
-<div class='separator'></div>
-
 <div class="content">
-  {{ content }}
+  <article>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-date">{{page.postdate}}</div>
+    {{ content }}
+  </article>
+
 </div>
 
 {% if site.disqus-id %} {% include comments.html %} {% endif %}

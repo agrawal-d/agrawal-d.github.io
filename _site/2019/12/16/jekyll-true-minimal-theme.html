@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-IN">
 
 <head>
     <meta charset='utf-8'>
@@ -15,6 +15,7 @@
     <link rel='stylesheet' href='http://localhost:4000/assets/css/site.css'>
     
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="author" content="Divyanshu Agrawal">
     <meta name="description" content="
     A long time ago, I stumbled upon a beautiful and simple website - the personal blog / website of Alexy Guzey. And while the content was interesting, what left the biggest impression on me was how l...
     ">
@@ -25,19 +26,20 @@
         <header>
     <h1 class="title"><a href='http://localhost:4000/'
             class="title">Web log of agrawal-d</a></h1>
+    <a href='http://localhost:4000/'> Home</a> | <a href='http://localhost:4000/about/'>About
+    </a>
+    | <a href='http://localhost:4000/contact/'> Contact</a> | <a
+        href='http://localhost:4000/archive/'> Archive</a> | <a
+        href='https://mailchi.mp/7183e2f21bac/web-log-of-agrawal-d'>
+        Newsletter</a>
+    <hr>
 </header>
-<a href='http://localhost:4000/'> Home</a> | <a href='http://localhost:4000/about/'>About </a>
-| <a href='http://localhost:4000/contact/'> Contact</a> | <a
-    href='http://localhost:4000/archive/'> Archive</a> | <a
-    href='https://mailchi.mp/7183e2f21bac/web-log-of-agrawal-d'> Newsletter</a>
-<hr>
 
-        <h1>How I built this website</h1>
-<div>December 16, 2019</div>
-<div class='separator'></div>
-
-<div class="content">
-  <p>A long time ago, I stumbled upon a beautiful and simple website - the personal blog / website of <a href="https://guzey.com/">Alexy Guzey</a>. And while the content was interesting, what left the biggest impression on me was how lightweight his website was. I tinkered a bit and realized that he was not using Wordpress or Blogger (he uses <a href="https://gohugo.io/">hugo</a>), which are rather heavy (and ugly). I realized that I too wanted my own blog. Being the programmer that I am, I started creating my own blog-generating website called, well, <a href="https://github.com/agrawal-d/blog">blog</a>. But I quickly realized the problem - it needed dynamic hosting. And since Github Pages was the hosting I wanted to use, I had to search for another alternative.</p>
+        <div class="content">
+  <article>
+    <h1 class="post-title">How I built this website</h1>
+    <div class="post-date">December 16, 2019</div>
+    <p>A long time ago, I stumbled upon a beautiful and simple website - the personal blog / website of <a href="https://guzey.com/">Alexy Guzey</a>. And while the content was interesting, what left the biggest impression on me was how lightweight his website was. I tinkered a bit and realized that he was not using Wordpress or Blogger (he uses <a href="https://gohugo.io/">hugo</a>), which are rather heavy (and ugly). I realized that I too wanted my own blog. Being the programmer that I am, I started creating my own blog-generating website called, well, <a href="https://github.com/agrawal-d/blog">blog</a>. But I quickly realized the problem - it needed dynamic hosting. And since Github Pages was the hosting I wanted to use, I had to search for another alternative.</p>
 
 <h3 id="enter-jekyll">Enter Jekyll</h3>
 
@@ -101,17 +103,23 @@ bundle <span class="nb">exec </span>jekyll serve
 
 <p>But I still think that comments are important for a blog. It’s great to hear what users think of your posts and they usually have something to add to it. There are solutions like Github events or Disqus, but I dont like either of them. Github events seems just wrong, and I Disqus has ads and privacy concerns. I am thinking of hosting an actual Node.JS server and fetching comments via <a href="https://en.wikipedia.org/wiki/Ajax_(programming)">AJAX</a>. I will create another post when I finally implement that. Until then, to send your thoughts to, visit <a href="/contact">this page</a>.</p>
 
+  </article>
+
 </div>
 
 
-        <hr>
-        <p>Thanks for visiting. This website
-            is <a href="https://github.com/agrawal-d/agrawal-d.github.io">open
-                source.</a> All posts are licensed under <a
-                href="https://creativecommons.org/licenses/by/4.0/legalcode">CC
-                BY 4.0</a>. You can <a
-                href="https://mailchi.mp/7183e2f21bac/web-log-of-agrawal-d">subscribe</a>
-            to new blog posts.</p>
+        <footer>
+            <hr />
+            <p>Thanks for visiting. This website
+                is <a
+                    href="https://github.com/agrawal-d/agrawal-d.github.io">open
+                    source.</a> All posts are licensed under <a
+                    href="https://creativecommons.org/licenses/by/4.0/legalcode">CC
+                    BY 4.0</a>. You can <a
+                    href="https://mailchi.mp/7183e2f21bac/web-log-of-agrawal-d">subscribe</a>
+                to new blog posts.</p>
+        </footer>
+
     </div>
 
 </body>

@@ -1,11 +1,53 @@
 <header>
-    <h1 class="title"><a href='{{ site.url }}/'
-            class="title">{{ site.name }}</a></h1>
-    <a href='{{ site.url }}/'> Home</a> | <a href='{{ site.url }}/about/'>About
-    </a>
-    | <a href='{{ site.url }}/contact/'> Contact</a> | <a
-        href='{{ site.url }}/archive/'> Archive</a> | <a
-        href='https://mailchi.mp/7183e2f21bac/web-log-of-agrawal-d'>
-        Newsletter</a>
+    <h1 class="title"><a href='{{ site.url }}/' class="title">{{ site.name }}</a></h1>
+    <a href='{{ site.url }}/'><button>Home</button></a>
+    <a href='{{ site.url }}/about/'><button>About</button></a>
+    <a href='{{ site.url }}/contact/'><button>Contact</button></a>
+    <a href='{{ site.url }}/archive/'><button>Archive</button></a>
+    <a href='https://mailchi.mp/7183e2f21bac/web-log-of-agrawal-d'><button>Newsletter</button></a>
+
+    <button class="layout-button" id="layout-toggle">Layout</button>
+    <div class="layout-form" id="layout-form">
+        <b>Font: </b>
+        <button id="font-serif">Serif</button> <button id="font-sans-serif">Sans-Serif</button>
+        <br />
+        <b>Desktop width: </b>
+        <button id="width-800">800px</button> <button id="width-900">900px</button>
+        <button id="width-1000">1000px</button>
+        <br />
+        <b>Line height: </b>
+        <button id="line-height-1">1</button>
+        <button id="line-height-1.25">1.25</button>
+        <button id="line-height-1.50">1.5</button>
+        <br />
+        <b>Text color: </b> <input type="color" id="color-picker" />
+    </div>
     <hr>
+
 </header>
+
+<script>
+    const el = (id) => document.getElementById(id);
+
+    el("layout-toggle").addEventListener("click", () => {
+        const layoutForm = el("layout-form");
+        const visible = layoutForm.style.display === "block";
+
+        if (visible) {
+            layoutForm.style.display = "none";
+        } else {
+            layoutForm.style.display = "block";
+        }
+    })
+
+    el("font-serif").addEventListener("click", () => document.getElementsByTagName("body")[0].style.fontFamily = "serif")
+    el("font-sans-serif").addEventListener("click", () => document.getElementsByTagName("body")[0].style.fontFamily = "sans-serif")
+    el("width-800").addEventListener("click", () => document.getElementsByClassName("content")[0].style.width = "800px")
+    el("width-900").addEventListener("click", () => document.getElementsByClassName("content")[0].style.width = "900px")
+    el("width-1000").addEventListener("click", () => document.getElementsByClassName("content")[0].style.width = "1000px")
+    el("line-height-1").addEventListener("click", () => document.getElementsByClassName("content")[0].style.lineHeight = "100%")
+    el("line-height-1.25").addEventListener("click", () => document.getElementsByClassName("content")[0].style.lineHeight = "125%")
+    el("line-height-1.50").addEventListener("click", () => document.getElementsByClassName("content")[0].style.lineHeight = "150%")
+    el("color-picker").addEventListener("change", () => document.getElementsByTagName("body")[0].style.color = el("color-picker").value)
+
+</script>

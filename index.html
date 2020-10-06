@@ -4,23 +4,24 @@ layout: default
 <div class="post-list">
   {% for post in paginator.posts %}
   <section>
-    <h2>
-      <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
-        {{ post.title }}
-      </a>
+    <h2 class="post-list-title">
+      <!-- <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'> -->
+      {{ post.title }}
+      <!-- </a> -->
     </h2>
-    <p><small>{{post.postdate}}</small></p>
-    <p>{{ post.content | strip_html | truncate: 200 }}</p>
+    <span>{{post.postdate}}</span>
+    <p>{{ post.content | strip_html | truncate: 400 }}</p>
+    <a href='{{ site.url }}{{ post.url }}'><button>Read more</button></a>
+    <hr />
   </section>
   {% endfor %}
-
 </div>
 
 {% if paginator.previous_page %}
-<a href='{{ site.url }}{{ paginator.previous_page_path }}'>Previous</a>
+<a href=' {{ site.url }}{{ paginator.previous_page_path }}'>Previous</a>
 {% endif %}
 
-&mdash; {{ paginator.page }} of {{ paginator.total_pages }} &mdash;
+Page {{ paginator.page }} of {{ paginator.total_pages }}
 
 {% if paginator.next_page %}
 <a href='{{ site.url }}{{ paginator.next_page_path }}'>Next</a>

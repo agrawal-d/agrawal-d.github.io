@@ -17,12 +17,14 @@ layout: default
   {% endfor %}
 </div>
 
-{% if paginator.previous_page %}
-<a href=' {{ site.url }}{{ paginator.previous_page_path }}'>Previous</a>
-{% endif %}
+<center>
+  {% if paginator.previous_page %}
+  <a href=' {{ site.url }}{{ paginator.previous_page_path }}'><button> Previous</button></a>
+  {% endif %}
 
-Page {{ paginator.page }} of {{ paginator.total_pages }}
+  Page {{ paginator.page }} of {{ paginator.total_pages }}
 
-{% if paginator.next_page %}
-<a href='{{ site.url }}{{ paginator.next_page_path }}'>Next</a>
-{% endif %}
+  {% if paginator.next_page %}
+  <a href='{{ site.url }}{{ paginator.next_page_path }}'><button> Next</button></a>
+  {% endif %}
+</center>

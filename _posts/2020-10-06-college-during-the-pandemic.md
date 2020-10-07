@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Online semester during the pandemic"
-postdate: "6 October 2020"
+postdate: "October 6 2020"
 ---
 
 Like all universities around the world, mine's conducting the semester online too. And sadly, it has not been a great experience. While the professors have tried their best to adapt to the circumstances, I feel I have not been able to learn as much as would have been

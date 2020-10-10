@@ -4,6 +4,17 @@
   max-width: 100%;
 }
 
+.btn {
+  /* padding: 1px 4px; */
+  font-size: initial;
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
 .content p {
   line-height: 150%;
 }

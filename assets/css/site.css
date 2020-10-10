@@ -4,9 +4,11 @@
   max-width: 100%;
 }
 
-.btn {
+.btn,
+button {
   /* padding: 1px 4px; */
   font-size: initial;
+  font-family: sans-serif;
   appearance: button;
   text-decoration: none;
   color: initial;

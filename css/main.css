@@ -1,0 +1,40 @@
+body {
+    margin: 0px;
+    margin-top: 50px;
+}
+
+.main-window {
+    width: 600px;
+    max-width: 95%;
+    margin: auto;
+}
+
+.new {
+    height: 11px;
+    vertical-align: middle;
+}
+
+.title-icon {
+    height: 14px;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container div {
+    flex-grow: 1;
+}
+
+@media (max-width: 450px) {
+    .flex-container {
+        display: block;
+    }
+
+    .status-bar-field {
+        text-align: center;
+        word-wrap: break-word;
+    }
+}

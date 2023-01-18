@@ -1,0 +1,26 @@
+.stars {
+    width: 100%;
+}
+
+.under-construction {
+    height: 12px;
+    display: block;
+    margin: auto;
+}
+
+.dancing-baby {
+    margin: auto;
+    display: block;
+}
+
+.dancing-potato {
+    height: 12px;
+    vertical-align: middle;
+    margin: auto;
+}
+
+@media (max-width: 450px) {
+    .dancing-potato {
+        display: none;
+    }
+}

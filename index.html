@@ -1,0 +1,126 @@
+<!-- Welcome to the source code. I hope you find something useful here... Your sanity is not guaranteed. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Divyanshu's website</title>
+        <link rel="stylesheet" href="css/XP.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/homepage.css" />
+    </head>
+    <body class="surface">
+        <div class="window main-window">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    <img src="img/iexplore.gif" alt="Internet Explorer" class="title-icon" />
+                    Divyanshu's Website
+                </div>
+                <div class="title-bar-controls">
+                    <a href="http://fakebsod.com/windows-8-and-10" target="blank"
+                        ><button aria-label="Minimize"></button
+                    ></a>
+                    <a href="http://fakebsod.com/windows-8-and-10" target="blank"
+                        ><button aria-label="Maximize"></button
+                    ></a>
+                    <a href="http://fakebsod.com/windows-8-and-10" target="blank"
+                        ><button aria-label="Close"></button
+                    ></a>
+                </div>
+            </div>
+            <div class="window-body">
+                <menu role="tablist">
+                    <button aria-selected="true" aria-controls="home">Home</button>
+                    <button aria-controls="blog">Blog</button>
+                    <button aria-controls="contact">Contact</button>
+                </menu>
+                <!-- Tabs -->
+                <article role="tabpanel" id="home">
+                    <b>Hi! I'm Divyanshu</b>
+                    <div class="flex-container">
+                        <div>
+                            <p>
+                                Welcome to my homepage. In my website I share random things that I enjoy. I like to read
+                                draw and play PC games. Please let me know if you have any fantasy/sci-fi books to
+                                recommend!
+                            </p>
+                            <p>
+                                <img src="img/new.gif" alt="NEW" class="new" /> (Coming soon) Checkout my amazing
+                                hyperlink &reg; collection from the top right tab!
+                            </p>
+                        </div>
+                        <div>
+                            <img src="img/dancing_baby.gif" alt="Dancing Baby" class="dancing-baby" />
+                        </div>
+                    </div>
+                    <form id="feeling-form">
+                        <fieldset>
+                            <legend>How are you feeling today?</legend>
+                            <div class="field-row">
+                                <input id="Great" type="radio" name="feeling" value="Great" />
+                                <label for="Great">Great</label>
+                            </div>
+                            <div class="field-row">
+                                <input id="Good" type="radio" name="feeling" value="Good" />
+                                <label for="Good">Good</label>
+                            </div>
+                            <div class="field-row">
+                                <input id="Bad" type="radio" name="feeling" value="Bad" />
+                                <label for="Bad">Bad</label>
+                            </div>
+                            <div class="field-row">
+                                <input type="submit" value="Submit" />
+                            </div>
+                        </fieldset>
+                    </form>
+                </article>
+                <!-- End Home -->
+                <article role="tabpanel" hidden id="blog">
+                    <h4>Blog</h4>
+                    <img src="img/clippy.gif" alt="Clippy" />
+                    <p>I have not written any blog posts yet.</p>
+                </article>
+                <!-- End Blog -->
+                <article role="tabpanel" hidden id="contact">
+                    <div class="flex-container">
+                        <div>
+                            <h4>Contact me</h4>
+                            <p>
+                                I would love to hear from you. Please feel free to reach out to me at
+                                <a href="mailto:agrawal-d@outlook.com">agrawal-d@outlook.com</a>
+                            </p>
+                        </div>
+                        <div>
+                            <img src="img/hellokitty.gif" alt="Clippy" />
+                        </div>
+                    </div>
+                </article>
+                <!-- End Contact -->
+                <!-- End Tabs -->
+                <section class="field-row" style="justify-content: flex-end">
+                    <button onclick="alert('Thank you for visiting.')">OK</button>
+                    <button onclick="alert('All your Amazon orders have been cancelled')">Cancel</button>
+                </section>
+                <!-- End footer -->
+            </div>
+            <div class="status-bar">
+                <p class="status-bar-field">
+                    <img src="img/under-construction.gif" alt="Under Construction" class="under-construction" />
+                </p>
+                <p class="status-bar-field">
+                    <a href="https://www.gnu.org/philosophy/free-sw.en.html">Open source vs Free Software</a>
+                </p>
+                <p class="status-bar-field">
+                    <img src="img/dance-small.gif" alt="Dancing Potato" class="dancing-potato" />
+                    <img src="img/dance-small-alt.gif" alt="Dancing Potato" class="dancing-potato" />
+                    <img src="img/dance-small.gif" alt="Dancing Potato" class="dancing-potato" />
+                    <img src="img/dance-small-alt.gif" alt="Dancing Potato" class="dancing-potato" />
+                    <img src="img/dance-small.gif" alt="Dancing Potato" class="dancing-potato" />
+                </p>
+            </div>
+        </div>
+        <script src="js/tabs.js"></script>
+        <script src="js/home.js"></script>
+    </body>
+</html>

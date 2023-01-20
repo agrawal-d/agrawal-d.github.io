@@ -1,5 +1,5 @@
-<!-- Welcome to the source code. I hope you find something useful here... Your sanity is not guaranteed. -->
 <!DOCTYPE html>
+<!-- Welcome to the source code. I hope you find something useful here... Your sanity is not guaranteed. -->
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -11,22 +11,16 @@
         <link rel="stylesheet" href="css/homepage.css" />
     </head>
     <body class="surface">
-        <div class="window main-window">
+        <div class="window main-window" id="homepage-main-window">
             <div class="title-bar">
                 <div class="title-bar-text">
-                    <img src="img/iexplore.gif" alt="Internet Explorer" class="title-icon" />
+                    <img src="img/seizure_star.gif" alt="Internet Explorer" class="title-icon" />
                     Divyanshu's Website
                 </div>
-                <div class="title-bar-controls">
-                    <a href="http://fakebsod.com/windows-8-and-10" target="blank"
-                        ><button aria-label="Minimize"></button
-                    ></a>
-                    <a href="http://fakebsod.com/windows-8-and-10" target="blank"
-                        ><button aria-label="Maximize"></button
-                    ></a>
-                    <a href="http://fakebsod.com/windows-8-and-10" target="blank"
-                        ><button aria-label="Close"></button
-                    ></a>
+                <div class="title-bar-controls homepage">
+                    <a><button aria-label="Minimize"></button></a>
+                    <a><button aria-label="Maximize"></button></a>
+                    <a><button aria-label="Close"></button></a>
                 </div>
             </div>
             <div class="window-body">
@@ -34,20 +28,28 @@
                     <button aria-selected="true" aria-controls="home">Home</button>
                     <button aria-controls="blog">Blog</button>
                     <button aria-controls="contact">Contact</button>
+                    <a href="hyperlinks.html" class="no_underline">
+                        <button>
+                            <span> Hyperlinks </span>
+                        </button>
+                    </a>
                 </menu>
                 <!-- Tabs -->
                 <article role="tabpanel" id="home">
-                    <b>Hi! I'm Divyanshu</b>
+                    <b>Welcome to my personal home page</b>
                     <div class="flex-container">
                         <div>
                             <p>
-                                Welcome to my homepage. In my website I share random things that I enjoy. I like to read
-                                draw and play PC games. Please let me know if you have any fantasy/sci-fi books to
-                                recommend!
+                                Greetings stranger. Did you get lost in the information superhighway, and stumbled upon my homepage? In any
+                                case, I am glad you are here.
                             </p>
+                            <p>Be forewarned, you will find nothing useful here.</p>
                             <p>
-                                <img src="img/new.gif" alt="NEW" class="new" /> (Coming soon) Checkout my amazing
-                                hyperlink &reg; collection from the top right tab!
+                                <img src="img/new.gif" alt="NEW" class="new" />Checkout
+                                <i>
+                                    <u><span class="rgb"> my amazing hyperlink &reg; collection </span></u>
+                                </i>
+                                from the top right tab!
                             </p>
                         </div>
                         <div>
@@ -56,7 +58,7 @@
                     </div>
                     <form id="feeling-form">
                         <fieldset>
-                            <legend>How are you feeling today?</legend>
+                            <legend class="blink_me">How are you feeling today?</legend>
                             <div class="field-row">
                                 <input id="Great" type="radio" name="feeling" value="Great" />
                                 <label for="Great">Great</label>
@@ -70,22 +72,30 @@
                                 <label for="Bad">Bad</label>
                             </div>
                             <div class="field-row">
-                                <input type="submit" value="Submit" />
+                                <img src="img/cute_puff.gif" alt="Cute creature" />
+                                <button type="submit" form="feeling-form" value="Submit">Submit</button>
+                                <img src="img/cute_puff.gif" alt="Cute creature" />
                             </div>
                         </fieldset>
                     </form>
                 </article>
                 <!-- End Home -->
                 <article role="tabpanel" hidden id="blog">
-                    <h4>Blog</h4>
-                    <img src="img/clippy.gif" alt="Clippy" />
-                    <p>I have not written any blog posts yet.</p>
+                    <img src="img/diary.gif" alt="Diary" class="img" />
+                    <b>Welcome to my online diary</b>
+                    <ul>
+                        <li><a href="blog-kerbal-space-program.html">Kerbal Space program</a></li>
+                    </ul>
                 </article>
                 <!-- End Blog -->
                 <article role="tabpanel" hidden id="contact">
                     <div class="flex-container">
                         <div>
-                            <h4>Contact me</h4>
+                            <h4>
+                                <img src="img/seizure_star.gif" alt="Star" class="img" />
+                                Contact me
+                                <img src="img/seizure_star.gif" alt="Star" class="img" />
+                            </h4>
                             <p>
                                 I would love to hear from you. Please feel free to reach out to me at
                                 <a href="mailto:agrawal-d@outlook.com">agrawal-d@outlook.com</a>
@@ -99,28 +109,27 @@
                 <!-- End Contact -->
                 <!-- End Tabs -->
                 <section class="field-row" style="justify-content: flex-end">
-                    <button onclick="alert('Thank you for visiting.')">OK</button>
-                    <button onclick="alert('All your Amazon orders have been cancelled')">Cancel</button>
+                    <button id="ok_button">OK</button>
+                    <button id="cancel_button">Cancel</button>
                 </section>
                 <!-- End footer -->
             </div>
             <div class="status-bar">
                 <p class="status-bar-field">
-                    <img src="img/under-construction.gif" alt="Under Construction" class="under-construction" />
-                </p>
-                <p class="status-bar-field">
-                    <a href="https://www.gnu.org/philosophy/free-sw.en.html">Open source vs Free Software</a>
+                    <a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Open source vs Free Software</a>
                 </p>
                 <p class="status-bar-field">
                     <img src="img/dance-small.gif" alt="Dancing Potato" class="dancing-potato" />
-                    <img src="img/dance-small-alt.gif" alt="Dancing Potato" class="dancing-potato" />
-                    <img src="img/dance-small.gif" alt="Dancing Potato" class="dancing-potato" />
-                    <img src="img/dance-small-alt.gif" alt="Dancing Potato" class="dancing-potato" />
+                    <a href="https://github.com/agrawal-d/agrawal-d.github.io">Source (AGPL3)</a>
                     <img src="img/dance-small.gif" alt="Dancing Potato" class="dancing-potato" />
                 </p>
             </div>
         </div>
-        <script src="js/tabs.js"></script>
-        <script src="js/home.js"></script>
+        <script src="js/main.js" type="module"></script>
+        <script type="module">
+            import "./js/home.js";
+        </script>
+        <!-- <script src="js/main.js" type="module"></script>
+        <script src="js/home.js"></script> -->
     </body>
 </html>

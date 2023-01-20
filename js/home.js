@@ -1,7 +1,5 @@
-"use strict";
-
+/*****************************************************************************************************************************************/
 const feelingForm = document.getElementById("feeling-form");
-
 if (!feelingForm) {
     console.error("Unable to get ID feeling-form");
 } else {
@@ -29,3 +27,16 @@ if (!feelingForm) {
         }
     });
 }
+/*****************************************************************************************************************************************/
+const main_window = document.getElementById("homepage-main-window");
+// const ok_button
+let rotate_angle = 0;
+ok_button.addEventListener("click", (event) => {
+    rotate_angle += 5;
+    main_window.style.transform = `rotate(${rotate_angle}deg)`;
+});
+cancel_button.addEventListener("click", (event) => {
+    rotate_angle -= 5;
+    main_window.style.transform = `rotate(${rotate_angle}deg)`;
+});
+/*****************************************************************************************************************************************/

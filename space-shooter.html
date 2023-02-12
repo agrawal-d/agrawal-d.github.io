@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Welcome to the code for spaceshooter. -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Space Shooter</title>
+        <link rel="stylesheet" href="css/XP.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/space-shooter.css">
+    </head>
+    <body class="surface">
+        <div class="window main-window">
+            <div class="title-bar">
+                <div class="title-bar-text">Space Shooter</div>
+                <div class="title-bar-controls homepage">
+                    <a><button aria-label="Minimize"></button></a>
+                    <a><button aria-label="Maximize"></button></a>
+                    <a><button aria-label="Close"></button></a>
+                </div>
+            </div>
+            <div class="window-body">
+                <article role="tabpanel">
+                    <!-- BEGIN CONTENT -->
+                    <div id="space-shooter-div">
+                        <canvas id="mycanvas" width="1" height="1"></canvas>
+                    </div>
+                    <!-- END CONTENT -->
+                </article>
+            </div>
+            <div class="status-bar">
+                <p class="status-bar-field">
+                    Credits: <a href="https://github.com/Abilityguy/Space-Shooter">Abilityguy</a>
+                </p>
+            </div>
+        </div>
+        <script src="js/main.js" type="module"></script>
+        <script src="js/space-shooter.js" type="module"></script>
+    </body>
+</html>

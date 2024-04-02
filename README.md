@@ -1,4 +1,4 @@
-# Divyanshu's website
+# Divyanshu's Cool website!
 
 This git repository contains the source code for my personal website.
 

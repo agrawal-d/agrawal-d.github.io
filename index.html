@@ -1,144 +1,113 @@
 <!DOCTYPE html>
-<!-- Welcome to the source code. I hope you find something useful here... Your sanity is not guaranteed. -->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Divyanshu's website</title>
-        <link rel="stylesheet" href="css/XP.css" />
-        <link rel="stylesheet" href="css/main.css" />
-        <link rel="stylesheet" href="css/homepage.css" />
-    </head>
-    <body class="surface">
-        <div class="window main-window" id="homepage-main-window">
-            <div class="title-bar">
-                <div class="title-bar-text">
-                    <img src="img/seizure_star.gif" alt="Internet Explorer" class="title-icon" />
-                    Divyanshu's Website
-                </div>
-                <div class="title-bar-controls homepage">
-                    <a><button aria-label="Minimize"></button></a>
-                    <a><button aria-label="Maximize"></button></a>
-                    <a><button aria-label="Close"></button></a>
-                </div>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="agrawal-d's home page" />
+    <meta name="author" content="agrawal-d" />
+    <title>agrawal-d</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .page {
+            width: 600px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .image {
+            flex: 0 0 auto;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        hr {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #f4bc0b;
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 1em;
+        }
+
+        ul li:not(:last-child) {
+            border-bottom: 1px solid #e6e6e6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <a href="https://agrawal-d.github.io/">
+            <h1>agrawal-d's home page</h1>
+        </a>
+        <div class="container">
+            <div class="image">
+                <img src="./tux-ram.png" alt="Penguin with a RAM stick in mouth" width="200" height="200" />
             </div>
-            <div class="window-body">
-                <menu role="tablist">
-                    <button aria-selected="true" aria-controls="home">Home</button>
-                    <button aria-controls="blog">Blog</button>
-                    <button aria-controls="contact">Contact</button>
-                    <button aria-controls="games">Games</button>
-                    <a href="hyperlinks.html" class="no_underline">
-                        <button>
-                            <span> Hyperlinks </span>
-                        </button>
-                    </a>
-                </menu>
-                <!-- Tabs -->
-                <article role="tabpanel" id="home">
-                    <b>Welcome to my personal home page</b>
-                    <div class="flex-container">
-                        <div>
-                            <p>
-                                Greetings stranger. Did you get lost in the information superhighway, and stumbled upon my homepage? In any
-                                case, I am glad you are here.
-                            </p>
-                            <p>Be forewarned, you will find nothing useful here.</p>
-                            <p>
-                                <img src="img/new.gif" alt="NEW" class="new" />Checkout
-                                <i>
-                                    <u><span class="rgb"> my amazing hyperlink &reg; collection </span></u>
-                                </i>
-                                from the top right tab!
-                            </p>
-                        </div>
-                        <div>
-                            <img src="img/dancing_baby.gif" alt="Dancing Baby" class="dancing-baby" />
-                        </div>
-                    </div>
-                    <form id="feeling-form">
-                        <fieldset>
-                            <legend class="blink_me">How are you feeling today?</legend>
-                            <div class="field-row">
-                                <input id="Great" type="radio" name="feeling" value="Great" />
-                                <label for="Great">Great</label>
-                            </div>
-                            <div class="field-row">
-                                <input id="Good" type="radio" name="feeling" value="Good" />
-                                <label for="Good">Good</label>
-                            </div>
-                            <div class="field-row">
-                                <input id="Bad" type="radio" name="feeling" value="Bad" />
-                                <label for="Bad">Bad</label>
-                            </div>
-                            <div class="field-row">
-                                <img src="img/cute_puff.gif" alt="Cute creature" />
-                                <button type="submit" form="feeling-form" value="Submit">Submit</button>
-                                <img src="img/cute_puff.gif" alt="Cute creature" />
-                            </div>
-                        </fieldset>
-                    </form>
-                </article>
-                <!-- End Home -->
-                <article role="tabpanel" hidden id="blog">
-                    <img src="img/diary.gif" alt="Diary" class="img" />
-                    <b>Welcome to my online diary</b>
-                    <ul>
-                        <li><a href="blog-kerbal-space-program.html">Kerbal Space program</a></li>
-                    </ul>
-                </article>
-                <!-- End Blog -->
-                <article role="tabpanel" hidden id="contact">
-                    <div class="flex-container">
-                        <div>
-                            <h4>
-                                <img src="img/seizure_star.gif" alt="Star" class="img" />
-                                Contact me
-                                <img src="img/seizure_star.gif" alt="Star" class="img" />
-                            </h4>
-                            <p>
-                                I would love to hear from you. Please feel free to reach out to me at
-                                <a href="mailto:agrawal-d@outlook.com">agrawal-d@outlook.com</a>
-                            </p>
-                        </div>
-                        <div>
-                            <img src="img/hellokitty.gif" alt="Clippy" />
-                        </div>
-                    </div>
-                </article>
-                <!-- End Contact -->
-                <article role="tabpanel" hidden id="games">
-                    <img src="img/dance-small.gif" alt="Dance" class="img" />
-                    <b>Try out some games!</b>
-                    <ul>
-                        <li><a href="space-shooter.html">Space Shooter</a></li>
-                    </ul>
-                </article>
-                <!-- End Games -->
-                <!-- End Tabs -->
-                <section class="field-row" style="justify-content: flex-end">
-                    <button id="ok_button">OK</button>
-                    <button id="cancel_button">Cancel</button>
-                </section>
-                <!-- End footer -->
-            </div>
-            <div class="status-bar">
-                <p class="status-bar-field">
-                    <a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Open source vs Free Software</a>
+
+            <div class="content">
+                <p>
+                    Hi, I'm <a href="https://github.com/agrawal-d/">agrawal-d</a>. I'm
+                    an open source developer. I enjoy building fun and useful software.
+                    On this website, you will find links to some of my projects.
                 </p>
-                <p class="status-bar-field">
-                    <img src="img/dance-small.gif" alt="Dancing Potato" class="dancing-potato" />
-                    <a href="https://github.com/agrawal-d/agrawal-d.github.io">Source (AGPL3)</a>
-                    <img src="img/dance-small.gif" alt="Dancing Potato" class="dancing-potato" />
+                <p>
+                    You can reach me at &lt;My GitHub username&gt;@outlook.com.
                 </p>
             </div>
         </div>
-        <script src="js/main.js" type="module"></script>
-        <script type="module">
-            import "./js/home.js";
-        </script>
-        <!-- <script src="js/main.js" type="module"></script>
-        <script src="js/home.js"></script> -->
-    </body>
+        <hr>
+        <ul>
+            <li>
+                <h2>Cph</h2>
+                <small>A VS Code extension that makes judging, compiling, and downloading problems for competitive
+                    programming easy. </small>
+                <br>
+                <a href="https://github.com/agrawal-d/cph">Visit</a>
+            </li>
+            <li>
+                <h2>Rs-lox-compiler</h2>
+                <small>An interpreter for the Lox programming language in Rust. Runs offline in the browser using WASM.
+                </small>
+                <br>
+                <a href="https://github.com/agrawal-d/rs-lox-compiler">Visit</a>
+            </li>
+            <li>
+                <h2>Web-clang-format</h2>
+                <small> Clang format in the browser, powered by Web-Assembly.</small>
+                <br>
+                <a href=" Clang format in the browser, powered by Web-Assembly ">Visit</a>
+            </li>
+        </ul>
+        <hr>
+        <a href="https://github.com/agrawal-d/agrawal-d.github.io">Source code for this website</a>
+    </div>
+</body>
+
 </html>
